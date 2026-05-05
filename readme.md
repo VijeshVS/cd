@@ -1,18 +1,10 @@
 # Execute Commands
 
-## LEX 
-
-```
-lex prog.l
-gcc lex.yy.c -o lexprog
-./lexprog
 ```
 
-## YACC
-
-```
-yacc -d program.y
-lex program.l
-gcc lex.yy.c y.tab.c -ll -o parser
+bison -d parser.y
+flex lexer.l
+gcc lex.yy.c parser.tab.c -o parser -ll
 ./parser
-```# cd
+
+```
