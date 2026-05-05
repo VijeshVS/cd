@@ -12,7 +12,9 @@
 %%
 
 program: level1;
-level1: FOR '(' expr_opt ';' expr_opt ';' expr_opt ')' '{' 
+level1: FOR '(' expr_opt ';' expr_opt ';' expr_opt ')' '{' level2 '}'
+level2: FOR '(' expr_opt ';' expr_opt ';' expr_opt ')' '{' level3 '}'
+level3: FOR '(' expr_opt ';' expr_opt ';' expr_opt ')' '{' stmt_list '}'
 
 expr_opt: condition |  | simple_stmt;
 condition: expr RELOP expr;
@@ -23,7 +25,7 @@ factor: ID | NUM | '(' expr ')';
 
 simple_stmt: ID '=' expr | ID INCDEC | INCDEC ID;
 
-stmt_list : | stmt_list stmt;
+stmt_list : stmt_list stmt |;
 stmt: simple_stmt ';' | ';';
 
 %%
