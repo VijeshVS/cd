@@ -12,8 +12,7 @@ void yyerror(const char *s);
 %right UMINUS
 
 %%
-S  : E               { printf("Result is %d\n", $1); }
-   ;
+S  : E               { printf("Result is %d\n", $1); } ;
 
 E  : E '+' E         { $$ = $1 + $3; }
    | E '-' E         { $$ = $1 - $3; }

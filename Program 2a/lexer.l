@@ -9,7 +9,7 @@ int negative_frac = 0;
 
 DIGIT   [0-9]
 INT     {DIGIT}+
-DEC     ({DIGIT}+"."{DIGIT}*) | ({DIGIT}*"."{DIGIT}+)
+DEC     ({DIGIT}+"."{DIGIT}*)|({DIGIT}*"."{DIGIT}+)
 RAT     {INT}"/"{INT}
 
 %%
